@@ -1,11 +1,14 @@
 <script>
+  import Editable from '$components/Editable.svelte'
   import { page } from '$app/stores'
+  import city from '$stores/city.store.ts'
+
   const path = $page.url.pathname
 </script>
 
 <header>
   {#if $page.url.pathname === '/'}
-    <h1>city name</h1>
+    <h1 id="city-name"><Editable value={$city.name} /></h1>
   {:else}
     <h1>{$page.url.pathname.charAt(1).toUpperCase() + $page.url.pathname.slice(2)}</h1>
   {/if}
