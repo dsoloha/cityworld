@@ -8,7 +8,7 @@
 
 <header>
   {#if $page.url.pathname === '/'}
-    <h1 id="city-name"><Editable value={$city.name} /></h1>
+    <h1><Editable bind:value={$city.name} /></h1>
   {:else}
     <h1>{$page.url.pathname.charAt(1).toUpperCase() + $page.url.pathname.slice(2)}</h1>
   {/if}
@@ -52,7 +52,7 @@
     font-size: 1.75em;
     font-weight: 300;
     margin-bottom: 0;
-    margin-left: 1em;
+    margin-left: 2em;
     margin-top: 0;
   }
 
