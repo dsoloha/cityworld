@@ -1,9 +1,9 @@
 <script lang="ts">
   export let handler = () => {
-    return;
-  };
-  export let focus = false;
-  export let type: 'button' | 'submit' | 'reset' = 'button';
+    return
+  }
+  export let focus = false
+  export let type: 'button' | 'submit' | 'reset' = 'button'
 </script>
 
 <button on:click={handler} class:focus {type}>

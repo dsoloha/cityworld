@@ -1,6 +1,6 @@
 <script>
-  import { page } from '$app/stores';
-  const path = $page.url.pathname;
+  import { page } from '$app/stores'
+  const path = $page.url.pathname
 </script>
 
 <header>
