@@ -8,7 +8,8 @@
     border-radius: var(--border-radius-large);
     border: 1px solid var(--light-border);
     color: var(--light-text);
-    padding: 4em;
+    margin: 1em 0;
+    padding: 3em 3em;
     width: 80%;
   }
 
