@@ -16,7 +16,7 @@
     max-width: 100%;
     min-width: fit-content;
     outline: none;
-    padding: 1em;
+    padding: 0.5em 1em;
     resize: none;
     width: auto;
   }

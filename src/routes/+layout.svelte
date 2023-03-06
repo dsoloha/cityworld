@@ -4,17 +4,17 @@
   import '$lib/css/styles.css'
   import '$lib/css/fonts.css'
 
-  let user = true // temporary until I get auth working
+  let player = true
 </script>
 
 <div class="app">
-  {#if user}
+  {#if player}
     <Header />
   {/if}
   <main>
     <slot />
   </main>
-  {#if user}
+  {#if player}
     <Footer />
   {/if}
 </div>
