@@ -48,7 +48,7 @@
 {/if}
 
 <style>
-	/* div {
+  /* div {
     padding: 0.11em 0.6em 0;
 	} */
 
