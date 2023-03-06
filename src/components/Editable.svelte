@@ -58,13 +58,13 @@
     border: 1px solid var(--light-border);
     box-sizing: content-box;
     color: var(--light-text);
+    font-weight: 300;
     max-width: 100%;
     min-width: fit-content;
     outline: none;
     padding: 0 0.5em;
     resize: none;
     width: auto;
-    font-weight: 300;
   }
 
   input:focus {
