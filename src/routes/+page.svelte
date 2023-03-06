@@ -1,15 +1,17 @@
+<script>
+  import city from '$stores/city.store.ts'
+
+  $: name = $city.name
+</script>
+
 <svelte:head>
   <title>cityworld</title>
   <meta name="description" content="cityworld" />
 </svelte:head>
 
-<header>
-  <h1>city name</h1>
-</header>
-
-<section>
-  <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-</section>
+<main>
+  {name}
+</main>
 
 <style>
   section {

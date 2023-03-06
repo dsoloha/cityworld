@@ -17,8 +17,8 @@
   --dark-link-hover: hsl(210, 10%, 85%);
   --dark-link-inactive: hsl(210, 10%, 55%);
 
-  --border-radius-small: 0.5em;
-  --border-radius-large: 1em;
+  --border-radius-small: 0.25em;
+  --border-radius-large: 0.5em;
 
   --column-width: 42rem;
   --column-margin-top: 4rem;
