@@ -1,9 +1,9 @@
 <script>
-  import Editable from '$components/Editable.svelte';
-  import { page } from '$app/stores';
-  import city from '$stores/city.store.ts';
+  import Editable from '$components/Editable.svelte'
+  import { page } from '$app/stores'
+  import city from '$stores/city.store.ts'
 
-  const path = $page.url.pathname;
+  const path = $page.url.pathname
 </script>
 
 <header>

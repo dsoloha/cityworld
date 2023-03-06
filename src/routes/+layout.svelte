@@ -1,10 +1,10 @@
 <script>
-  import Header from '$components/Header.svelte';
-  import Footer from '$components/Footer.svelte';
-  import '$lib/css/styles.css';
-  import '$lib/css/fonts.css';
+  import Header from '$components/Header.svelte'
+  import Footer from '$components/Footer.svelte'
+  import '$lib/css/styles.css'
+  import '$lib/css/fonts.css'
 
-  let user = true; // temporary until I get auth working
+  let user = true // temporary until I get auth working
 </script>
 
 <div class="app">
