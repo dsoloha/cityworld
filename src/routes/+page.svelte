@@ -1,5 +1,6 @@
 <script>
   import city from '$stores/city.store.ts'
+  import Card from '$components/Card.svelte'
 
   $: name = $city.name
 </script>
@@ -10,7 +11,11 @@
 </svelte:head>
 
 <main>
-  {name}
+  <section>
+    <Card>
+      {name}
+    </Card>
+  </section>
 </main>
 
 <style>
