@@ -17,6 +17,7 @@
   }
 
   function submit() {
+    if (value == '') value = original
     if (value != original) {
       dispatch('submit', value)
     }
