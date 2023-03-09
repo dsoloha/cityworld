@@ -1,7 +1,8 @@
 <script>
-  import city from '$stores/city.store.ts'
+  import Intro from '../routes/(intro)/intro.svelte'
+  import Player from '../routes/(intro)/player.svelte'
 
-  $: name = $city.name
+  import see from '$stores/see.store'
 </script>
 
 <svelte:head>
@@ -10,11 +11,16 @@
 </svelte:head>
 
 <main>
-  {name}
+  {#if $see.setup.intro}
+    <Intro />
+  {/if}
+  {#if $see.setup.player}
+    <Player />
+  {/if}
 </main>
 
 <style>
-  section {
+  main {
     display: flex;
     flex-direction: column;
     justify-content: center;
