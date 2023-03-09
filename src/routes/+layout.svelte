@@ -1,20 +1,21 @@
 <script>
   import Header from '$components/Header.svelte'
   import Footer from '$components/Footer.svelte'
+
   import '$lib/css/styles.css'
   import '$lib/css/fonts.css'
 
-  let player = true
+  import player from '$stores/player.store'
 </script>
 
 <div class="app">
-  {#if player}
+  {#if $player.name != ''}
     <Header />
   {/if}
   <main>
     <slot />
   </main>
-  {#if player}
+  {#if $player.name != ''}
     <Footer />
   {/if}
 </div>
