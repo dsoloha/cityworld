@@ -15,14 +15,14 @@
     background-color: white;
     border-radius: var(--border-radius-small);
     border: 1px solid var(--light-border);
-    color: var(--light-text);
+    color: black;
     padding: 1em;
   }
 
   button:hover {
     background-color: black;
     border-color: black;
-    color: var(--dark-link-hover);
+    color: white;
   }
 
   button.focus {
@@ -41,13 +41,13 @@
     button {
       background-color: black;
       border-color: var(--dark-border);
-      color: var(--dark-text);
+      color: white;
     }
 
     button:hover {
       background-color: white;
       border-color: black;
-      color: var(--light-link-hover);
+      color: black;
     }
 
     button.focus {
