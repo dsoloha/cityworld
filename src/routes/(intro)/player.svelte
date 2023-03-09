@@ -9,7 +9,9 @@
 
 <Card>
   <p>
-    The people living there now aren't going to accept just anyone as a leader. <b>Who are you?</b>
+    The people living there now aren't going to accept just anyone as a leader. <b
+      >Who are you, and why should you take charge?</b
+    >
   </p>
   <Input name="player-name" placeholder="your name" bind:value={$player.name} />
   <Button
