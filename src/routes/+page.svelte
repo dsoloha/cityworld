@@ -1,6 +1,7 @@
 <script>
-  import Intro from '../routes/(intro)/intro.svelte'
-  import Player from '../routes/(intro)/player.svelte'
+  import Dashboard from './(app)/dashboard.svelte'
+  import Intro from './(intro)/intro.svelte'
+  import Player from './(intro)/player.svelte'
 
   import see from '$stores/see.store'
 </script>
@@ -13,9 +14,10 @@
 <main>
   {#if $see.setup.intro}
     <Intro />
-  {/if}
-  {#if $see.setup.player}
+  {:else if $see.setup.player}
     <Player />
+  {:else}
+    <Dashboard />
   {/if}
 </main>
 
