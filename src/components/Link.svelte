@@ -3,59 +3,75 @@
     return
   }
   export let focus = false
-  export let type: 'button' | 'submit' | 'reset' = 'button'
+  export let to: string
 </script>
 
-<button on:click={handler} class:focus {type}>
-  <slot />
-</button>
+<div class:focus>
+  <a href={to} on:click={handler}>
+    <slot />
+  </a>
+</div>
 
 <style>
-  button {
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  div {
     background-color: white;
     border-radius: var(--border-radius-small);
     border: 1px solid var(--light-border);
-    color: black;
     padding: 1em;
+    width: fit-content;
   }
 
-  button:hover {
+  div:hover {
     background-color: black;
     border-color: black;
+  }
+
+  div:hover a {
     color: white;
   }
 
-  button.focus {
+  div.focus {
     background-color: black;
     border-color: black;
+  }
+
+  div.focus a {
     color: white;
   }
 
-  button.focus:hover {
+  div.focus:hover a {
+    color: black;
+  }
+
+  div.focus:hover {
     background-color: white;
     border-color: black;
-    color: black;
   }
 
   @media (prefers-color-scheme: dark) {
-    button {
+    a {
       background-color: black;
       border-color: var(--dark-border);
       color: white;
     }
 
-    button:hover {
+    div:hover {
       background-color: white;
       border-color: black;
       color: black;
     }
 
-    button.focus {
+    div.focus {
       background-color: white;
       color: black;
     }
 
-    button.focus:hover {
+    div.focus:hover {
       background-color: black;
       border-color: white;
       color: white;
@@ -63,7 +79,7 @@
   }
 
   @media (max-width: 600px) {
-    button {
+    a {
       width: 100%;
     }
   }
