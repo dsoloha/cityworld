@@ -14,10 +14,16 @@
     >
   </p>
   <Input name="player-name" placeholder="your name" bind:value={$player.name} />
-  <Button
-    focus
-    handler={() => {
-      $see.setup.player = false
-    }}>Continue</Button
-  >
+  {#if $player.name}
+    <p>
+      Your name is <b>{$player.name}</b>.
+    </p>
+    <Button
+      focus
+      handler={() => {
+        $see.setup.intro = false
+        $see.setup.player = false
+      }}>Continue</Button
+    >
+  {/if}
 </Card>
