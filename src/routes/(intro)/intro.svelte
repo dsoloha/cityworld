@@ -29,9 +29,14 @@
   <Button
     focus
     handler={() => {
-      $see.setup.intro = false
       $see.setup.player = true
+      $see.setup.intro = false
     }}>Let's do it.</Button
   >
-  <Button>I already have a settlement.</Button>
+  <Button
+    handler={() => {
+      $see.setup.login = true
+      $see.setup.intro = false
+    }}>I already have a settlement.</Button
+  >
 </Card>
