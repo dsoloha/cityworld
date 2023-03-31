@@ -1,12 +1,12 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher, onMount } from 'svelte'
 
-  export let value,
+  export let value: string | number,
     required = true
 
   const dispatch = createEventDispatcher()
   let editing = false,
-    original
+    original: string | number
 
   onMount(() => {
     original = value
@@ -25,7 +25,7 @@
     editing = false
   }
 
-  function keydown(event) {
+  function keydown(event: { key: string; preventDefault: () => void }) {
     if (event.key == 'Escape') {
       event.preventDefault()
       value = original
@@ -33,7 +33,7 @@
     }
   }
 
-  function focus(element) {
+  function focus(element: HTMLInputElement) {
     element.focus()
   }
 </script>
@@ -43,6 +43,7 @@
     <input bind:value on:blur={submit} {required} use:focus />
   </form>
 {:else}
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div on:click={edit}>
     {value}
   </div>
