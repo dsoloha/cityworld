@@ -1,0 +1,19 @@
+.center {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.player-response {
+  text-indent: 1em;
+  font-style: italic;
+}
+
+.text-column {
+  display: flex;
+  max-width: 48rem;
+  flex: 0.6;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}

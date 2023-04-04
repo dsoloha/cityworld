@@ -81,21 +81,6 @@ button:focus:not(:focus-visible) {
   outline: none;
 }
 
-.center {
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-
-.text-column {
-  display: flex;
-  max-width: 48rem;
-  flex: 0.6;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
-}
-
 @media (max-width: 600px) {
   body {
     padding: 2em;
