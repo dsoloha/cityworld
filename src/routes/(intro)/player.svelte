@@ -5,6 +5,19 @@
 
   import player from '$stores/player.store'
   import see from '$stores/see.store'
+
+  let middle = ''
+  let last = ''
+
+  $: first = $player.name.first
+  $: if ($player.name.middle) {
+    middle = ` ${$player.name.middle}`
+  }
+  $: if ($player.name.last) {
+    last = ` ${$player.name.last}`
+  }
+
+  $: name = first + middle + last
 </script>
 
 <Card>
@@ -13,12 +26,16 @@
       >Who are you, and why should you take charge?</b
     >
   </p>
-  <Input name="player-name" placeholder="your name" bind:value={$player.name} />
-  {#if $player.name}
+  <Input name="player-name-first" placeholder="first name" bind:value={$player.name.first} />
+  {#if $player.name.first}
+    {#if $player.name.last}
+      <Input name="player-name-middle" placeholder="middle name" bind:value={$player.name.middle} />
+    {/if}
+    <Input name="player-name-last" placeholder="last name" bind:value={$player.name.last} />
     <p class="player-response">
-      Your name is <b>{$player.name}</b>.
+      Your name is <b>{name}</b>.
     </p>
-    <p>And what did you do, <b>{$player.name}</b>?</p>
+    <p>And what did you do, <b>{$player.name.first}</b>?</p>
     <Button
       handler={() => {
         $player.occupation = 'farmer'
@@ -91,7 +108,7 @@
       </p>
     {/if}
   {/if}
-  {#if $player.name && $player.occupation}
+  {#if $player.name.first && $player.occupation}
     <Button
       focus
       handler={() => {
