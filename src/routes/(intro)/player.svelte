@@ -15,8 +15,8 @@
   </p>
   <Input name="player-name" placeholder="your name" bind:value={$player.name} />
   {#if $player.name}
-    <p>
-      <i>Your name is <b>{$player.name}</b>.</i>
+    <p class="player-response">
+      Your name is <b>{$player.name}</b>.
     </p>
     <p>And what did you do, <b>{$player.name}</b>?</p>
     <Button
@@ -86,16 +86,18 @@
       tooltip="You were a career criminal.">Criminal</Button
     >
     {#if $player.occupation}
-      <p>
-        <i>You used to {$player.occupation}.</i>
+      <p class="player-response">
+        You used to {$player.occupation}.
       </p>
-      <Button
-        focus
-        handler={() => {
-          $see.setup.intro = false
-          $see.setup.player = false
-        }}>Continue</Button
-      >
     {/if}
+  {/if}
+  {#if $player.name && $player.occupation}
+    <Button
+      focus
+      handler={() => {
+        $see.setup.intro = false
+        $see.setup.player = false
+      }}>Continue</Button
+    >
   {/if}
 </Card>
