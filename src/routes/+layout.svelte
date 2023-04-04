@@ -2,8 +2,9 @@
   import Header from '$components/Header.svelte'
   import Footer from '$components/Footer.svelte'
 
-  import '$lib/css/styles.css'
+  import '$lib/css/classes.css'
   import '$lib/css/fonts.css'
+  import '$lib/css/styles.css'
 
   import player from '$stores/player.store'
 </script>
