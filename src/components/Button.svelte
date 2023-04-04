@@ -3,10 +3,14 @@
     return
   }
   export let focus = false
+  export let tooltip: string = ''
   export let type: 'button' | 'submit' | 'reset' = 'button'
 </script>
 
 <button on:click={handler} class:focus {type}>
+  {#if tooltip != ''}
+    <span>{tooltip}</span>
+  {/if}
   <slot />
 </button>
 
@@ -16,13 +20,18 @@
     border-radius: var(--border-radius-small);
     border: 1px solid var(--light-border);
     color: black;
-    padding: 1em;
+    padding: 1em 2em;
   }
 
   button:hover {
     background-color: black;
     border-color: black;
     color: white;
+  }
+
+  button:hover span {
+    visibility: visible;
+    opacity: 1;
   }
 
   button.focus {
@@ -35,6 +44,30 @@
     background-color: white;
     border-color: black;
     color: black;
+  }
+
+  span {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.67);
+    border-radius: var(--border-radius-small);
+    border: 1px solid var(--light-border);
+    color: black;
+    margin-left: -4em;
+    margin-top: -3em;
+    opacity: 0;
+    padding: 1em 2em;
+    position: absolute;
+    transition: opacity 0.3s;
+    visibility: hidden;
+    z-index: 1;
+  }
+
+  span::after {
+    content: '';
+    left: 50%;
+    position: absolute;
+    top: 100%;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -58,6 +91,12 @@
     button.focus:hover {
       background-color: black;
       border-color: white;
+      color: white;
+    }
+
+    span {
+      background-color: rgba(0, 0, 0, 0.67);
+      border-color: var(--dark-border);
       color: white;
     }
   }
