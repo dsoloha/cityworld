@@ -35,76 +35,83 @@
     <p class="player-response">
       Your name is <b>{name}</b>.
     </p>
-    <p>And what did you do, <b>{$player.name.first}</b>?</p>
-    <Button
-      handler={() => {
-        $player.occupation = 'farmer'
-      }}
-      tooltip="You used to be a farmer.">Agriculture</Button
-    >
-    <Button
-      handler={() => {
-        $player.occupation = 'construction'
-      }}
-      tooltip="You used to own a successful construction company.">Construction</Button
-    >
-    <Button
-      handler={() => {
-        $player.occupation = 'art'
-      }}
-      tooltip="You used to be a freelance artist.">Art</Button
-    >
-    <Button
-      handler={() => {
-        $player.occupation = 'finance'
-      }}
-      tooltip="You used to be a business manager.">Finance</Button
-    >
-    <Button
-      handler={() => {
-        $player.occupation = 'education'
-      }}
-      tooltip="You were once the dean of a prestigious college.">Education</Button
-    >
-    <Button
-      handler={() => {
-        $player.occupation = 'politics'
-      }}
-      tooltip="You used to be a politician.">Politics</Button
-    >
-    <Button
-      handler={() => {
-        $player.occupation = 'science'
-      }}
-      tooltip="You used to be a scientist.">Science</Button
-    >
-    <Button
-      handler={() => {
-        $player.occupation = 'tech'
-      }}
-      tooltip="You used to work in the technology sector.">Tech</Button
-    >
-    <Button
-      handler={() => {
-        $player.occupation = 'military'
-      }}
-      tooltip="You were once career military.">Military</Button
-    >
-    <Button
-      handler={() => {
-        $player.occupation = 'religion'
-      }}
-      tooltip="You once led a large congregation.">Religious</Button
-    >
-    <Button
-      handler={() => {
-        $player.occupation = 'crime'
-      }}
-      tooltip="You were a career criminal.">Criminal</Button
-    >
+    <p>And what did you do, <b>{first}</b>?</p>
+    <div class="center-container">
+      <div class="center">
+        <Button
+          handler={() => {
+            $player.occupation = 'farmer'
+          }}
+          tooltip="You used to be a farmer.">Agriculture</Button
+        >
+        <Button
+          handler={() => {
+            $player.occupation = 'construction'
+          }}
+          tooltip="You used to own a successful construction company.">Construction</Button
+        >
+        <Button
+          handler={() => {
+            $player.occupation = 'art'
+          }}
+          tooltip="You used to be a freelance artist.">Art</Button
+        >
+        <Button
+          handler={() => {
+            $player.occupation = 'finance'
+          }}
+          tooltip="You used to be a business manager.">Finance</Button
+        >
+        <Button
+          handler={() => {
+            $player.occupation = 'education'
+          }}
+          tooltip="You were once the dean of a prestigious college.">Education</Button
+        >
+        <Button
+          handler={() => {
+            $player.occupation = 'politics'
+          }}
+          tooltip="You used to be a politician.">Politics</Button
+        >
+        <Button
+          handler={() => {
+            $player.occupation = 'science'
+          }}
+          tooltip="You used to be a scientist.">Science</Button
+        >
+        <Button
+          handler={() => {
+            $player.occupation = 'tech'
+          }}
+          tooltip="You used to work in the technology sector.">Tech</Button
+        >
+        <Button
+          handler={() => {
+            $player.occupation = 'military'
+          }}
+          tooltip="You were once career military.">Military</Button
+        >
+        <Button
+          handler={() => {
+            $player.occupation = 'religion'
+          }}
+          tooltip="You once led a large congregation.">Religious</Button
+        >
+        <Button
+          handler={() => {
+            $player.occupation = 'crime'
+          }}
+          tooltip="You were a career criminal.">Criminal</Button
+        >
+      </div>
+    </div>
     {#if $player.occupation}
       <p class="player-response">
-        You used to {$player.occupation}.
+        You used to <b>{$player.occupation}</b>.
+      </p>
+      <p>
+        Now describe yourself, <b>{first}</b>.
       </p>
     {/if}
   {/if}
