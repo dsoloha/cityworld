@@ -6,17 +6,17 @@
   import '$lib/css/fonts.css'
   import '$lib/css/styles.css'
 
-  import player from '$stores/player.store'
+  import see from '$stores/see.store'
 </script>
 
 <div class="app">
-  {#if $player.occupation}
+  {#if $see.ui}
     <Header />
   {/if}
   <main>
     <slot />
   </main>
-  {#if $player.occupation}
+  {#if $see.ui}
     <Footer />
   {/if}
 </div>
