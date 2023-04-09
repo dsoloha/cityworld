@@ -6,6 +6,7 @@ const see = writable({
     login: false,
     player: false,
   },
+  ui: false,
 })
 
 export default see
