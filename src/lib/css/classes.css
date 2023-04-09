@@ -1,12 +1,12 @@
 .center {
-  max-width: 100%;
-}
-
-.center-container {
   align-items: center;
   display: flex;
   justify-content: center;
   text-align: center;
+}
+
+.margin-top {
+  margin-top: 2em;
 }
 
 .player-response {
