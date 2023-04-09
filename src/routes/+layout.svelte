@@ -10,13 +10,13 @@
 </script>
 
 <div class="app">
-  {#if $player.name != ''}
+  {#if $player.occupation}
     <Header />
   {/if}
   <main>
     <slot />
   </main>
-  {#if $player.name != ''}
+  {#if $player.occupation}
     <Footer />
   {/if}
 </div>
