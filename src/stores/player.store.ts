@@ -1,11 +1,6 @@
 import { writable } from 'svelte/store'
+import Actor from '../classes/Actor'
 
-const player = writable({
-  height: 180,
-  name: { first: '', middle: '', last: '' },
-  occupation: '',
-  sex: '',
-  weight: 70,
-})
+const player = writable(new Actor())
 
 export default player
