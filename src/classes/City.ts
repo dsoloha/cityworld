@@ -1,4 +1,4 @@
-import global from '$stores/global.store'
+import common from '$stores/common.store.ts'
 import { get } from 'svelte/store'
 
 export default class City {
@@ -6,9 +6,9 @@ export default class City {
   name: string
 
   constructor(name?: string) {
-    this.id = get(global).id
+    this.id = get(common).id
     this.name = name ?? ''
 
-    global.set({ id: this.id++ })
+    common.set({ id: this.id++ })
   }
 }
