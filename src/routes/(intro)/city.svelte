@@ -14,13 +14,29 @@
     decided to give you a chance as leader.
   </p>
   <p>
-    But where <i>is</i> "here"?
+    <b>
+      But where <i>is</i> "here"?
+    </b>
   </p>
   <Input name="city-name" placeholder="city name" bind:value={$city.name} />
 
   {#if $city.name}
-    <p class="player-response">This is the city of <b>{$city.name}</b>.</p>
+    <p class="player-response">
+      This city is called <b>{$city.name}</b>.
+    </p>
 
+    <p class="margin-top"><b>Where is <b>{$city.name}</b> located?</b></p>
+    <Input name="continent" placeholder="continent" />
+    <Input name="country" placeholder="country" />
+  {/if}
+
+  {#if $city.name}
+    <p class="margin-top player-response">
+      This is the city of <b>{$city.name}</b>.
+    </p>
+  {/if}
+
+  {#if $city.name}
     <div class="margin-top">
       <Button
         focus
