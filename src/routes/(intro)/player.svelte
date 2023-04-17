@@ -6,6 +6,20 @@
   import player from '$stores/player.store'
   import see from '$stores/see.store'
 
+  const occupations = [
+    ['agriculture', 'You once owned and operated a large farm.'],
+    ['construction', 'You built your own successful construction company from the ground up.'],
+    ['art', 'You used to be a freelance artist.'],
+    ['finance', 'You were the former finance manager at a large corporation.'],
+    ['education', 'You were once the dean of a prestigious college.'],
+    ['politics', 'You used to be a politician.'],
+    ['science', 'You used to be a scientist.'],
+    ['tech', 'You used to work in the technology sector.'],
+    ['military', 'You were once career military.'],
+    ['religion', 'You once led a large congregation.'],
+    ['crime', 'You were a career criminal.'],
+  ]
+
   let middle = ''
   let last = ''
 
@@ -18,6 +32,7 @@
   }
 
   $: name = first + middle + last
+  $: occupation = occupations.find((occupation) => occupation[0] == $player.occupation) ?? ''
 </script>
 
 <Card>
@@ -39,72 +54,14 @@
 
     <p class="margin-top"><b>And what did you do, {first}?</b></p>
     <div>
-      <Button
-        handler={() => {
-          $player.occupation = 'farmer'
-        }}
-        tooltip="You used to be a farmer.">Agriculture</Button
-      >
-      <Button
-        handler={() => {
-          $player.occupation = 'construction'
-        }}
-        tooltip="You used to own a successful construction company.">Construction</Button
-      >
-      <Button
-        handler={() => {
-          $player.occupation = 'art'
-        }}
-        tooltip="You used to be a freelance artist.">Art</Button
-      >
-      <Button
-        handler={() => {
-          $player.occupation = 'finance'
-        }}
-        tooltip="You used to be a business manager.">Finance</Button
-      >
-      <Button
-        handler={() => {
-          $player.occupation = 'education'
-        }}
-        tooltip="You were once the dean of a prestigious college.">Education</Button
-      >
-      <Button
-        handler={() => {
-          $player.occupation = 'politics'
-        }}
-        tooltip="You used to be a politician.">Politics</Button
-      >
-      <Button
-        handler={() => {
-          $player.occupation = 'science'
-        }}
-        tooltip="You used to be a scientist.">Science</Button
-      >
-      <Button
-        handler={() => {
-          $player.occupation = 'tech'
-        }}
-        tooltip="You used to work in the technology sector.">Tech</Button
-      >
-      <Button
-        handler={() => {
-          $player.occupation = 'military'
-        }}
-        tooltip="You were once career military.">Military</Button
-      >
-      <Button
-        handler={() => {
-          $player.occupation = 'religion'
-        }}
-        tooltip="You once led a large congregation.">Religious</Button
-      >
-      <Button
-        handler={() => {
-          $player.occupation = 'crime'
-        }}
-        tooltip="You were a career criminal.">Criminal</Button
-      >
+      {#each occupations as occupation}
+        <Button
+          handler={() => {
+            $player.occupation = occupation[0]
+          }}
+          tooltip={occupation[1]}>{occupation[0]}</Button
+        >
+      {/each}
     </div>
 
     {#if $player.occupation}
@@ -146,6 +103,15 @@
         </p>
       {/if}
     {/if}
+  {/if}
+
+  {#if $player.name.first}
+    <p class="margin-top player-response">
+      You are <b>{$player.name.first}</b>.
+      {#if $player.occupation}
+        {occupation[1]}
+      {/if}
+    </p>
   {/if}
 
   {#if $player.name.first && $player.occupation && $player.sex && $player.height && $player.weight}
