@@ -205,6 +205,7 @@
   <Input name="city-name" placeholder="city name" bind:value={$city.name} />
 
   {#if $city.name}
+<<<<<<< HEAD
     <p class="player-response">
       This city is called <b>{$city.name}</b>.
     </p>
@@ -254,6 +255,8 @@
   {/if}
 
   {#if $city.name && $city.continent && $city.country}
+=======
+>>>>>>> 06e99e9 (City name is now required)
     <p class="player-response">This is the city of <b>{$city.name}</b>.</p>
 
     <div class="margin-top">
