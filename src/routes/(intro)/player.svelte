@@ -132,9 +132,10 @@
       <Button
         focus
         handler={() => {
+          $see.setup.city = true
           $see.setup.intro = false
           $see.setup.player = false
-          $see.ui = true
+          $see.ui = false
         }}>Continue</Button
       >
     </div>

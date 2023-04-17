@@ -4,6 +4,7 @@
   import Player from './(intro)/player.svelte'
 
   import see from '$stores/see.store'
+  import City from './(intro)/city.svelte'
 </script>
 
 <svelte:head>
@@ -16,6 +17,8 @@
     <Intro />
   {:else if $see.setup.player}
     <Player />
+  {:else if $see.setup.city}
+    <City />
   {:else}
     <Dashboard />
   {/if}
