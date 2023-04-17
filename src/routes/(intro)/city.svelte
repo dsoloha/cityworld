@@ -18,15 +18,19 @@
   </p>
   <Input name="city-name" placeholder="city name" bind:value={$city.name} />
 
-  <div class="margin-top">
-    <Button
-      focus
-      handler={() => {
-        $see.setup.city = false
-        $see.setup.intro = false
-        $see.setup.player = false
-        $see.ui = true
-      }}>Continue</Button
-    >
-  </div>
+  {#if $city.name}
+    <p class="player-response">This is the city of <b>{$city.name}</b>.</p>
+
+    <div class="margin-top">
+      <Button
+        focus
+        handler={() => {
+          $see.setup.city = false
+          $see.setup.intro = false
+          $see.setup.player = false
+          $see.ui = true
+        }}>Continue</Button
+      >
+    </div>
+  {/if}
 </Card>
