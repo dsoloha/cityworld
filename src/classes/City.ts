@@ -1,4 +1,4 @@
-import common from '$stores/common.store.ts'
+import common from '$stores/common.store'
 import { get } from 'svelte/store'
 
 export default class City {
