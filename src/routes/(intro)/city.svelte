@@ -254,6 +254,8 @@
   {/if}
 
   {#if $city.name && $city.continent && $city.country}
+    <p class="player-response">This is the city of <b>{$city.name}</b>.</p>
+
     <div class="margin-top">
       <Button
         focus
