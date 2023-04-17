@@ -5,6 +5,7 @@
 
   import player from '$stores/player.store'
   import see from '$stores/see.store'
+  import { capitalize } from '../../util/string'
 
   const occupations = [
     ['agriculture', 'You once owned and operated a large farm.'],
@@ -59,14 +60,15 @@
           handler={() => {
             $player.occupation = occupation[0]
           }}
-          tooltip={occupation[1]}>{occupation[0]}</Button
+          focus={$player.occupation == occupation[0]}
+          tooltip={occupation[1]}>{capitalize(occupation[0])}</Button
         >
       {/each}
     </div>
 
     {#if $player.occupation}
       <p class="player-response">
-        You used to <b>{$player.occupation}</b>.
+        <b>{occupation[1]}</b>
       </p>
 
       <p class="margin-top">
@@ -76,12 +78,14 @@
         <Button
           handler={() => {
             $player.sex = 'male'
-          }}>Male</Button
+          }}
+          focus={$player.sex == 'male'}>Male</Button
         >
         <Button
           handler={() => {
             $player.sex = 'female'
-          }}>Female</Button
+          }}
+          focus={$player.sex == 'female'}>Female</Button
         >
       </div>
 
@@ -107,9 +111,18 @@
 
   {#if $player.name.first}
     <p class="margin-top player-response">
-      You are <b>{$player.name.first}</b>.
+      You are <b>{name}</b>.
       {#if $player.occupation}
-        {occupation[1]}
+        <b>{occupation[1]}</b>
+      {/if}
+      {#if $player.sex}
+        You are a <b>{$player.sex}</b>.
+        {#if $player.height}
+          You are <b>{$player.height}</b>cm tall.
+        {/if}
+        {#if $player.weight}
+          You weigh <b>{$player.weight}</b>kg.
+        {/if}
       {/if}
     </p>
   {/if}
