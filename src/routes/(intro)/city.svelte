@@ -2,13 +2,14 @@
   import Button from '$components/Button.svelte'
   import Card from '$components/Card.svelte'
   import Input from '$components/Input.svelte'
+  import Select from '$components/Select.svelte'
 
   import city from '$stores/city.store'
   import player from '$stores/player.store'
   import see from '$stores/see.store'
 
   const continents = ['Africa', 'Asia', 'Australia', 'Europe', 'North America', 'South America']
-  const countries = [
+  const countries = new Map([
     [
       'Africa',
       [
@@ -189,7 +190,7 @@
         'Venezuela',
       ],
     ],
-  ]
+  ])
 </script>
 
 <Card>
@@ -224,18 +225,11 @@
       <div class="margin-top">
         <p><b>In which country?</b></p>
 
-        {#each countries as continent}
-          {#if continent[0] == $city.continent}
-            {#each continent[1] as country}
-              <Button
-                handler={() => {
-                  $city.country = country
-                }}
-                focus={$city.country == country}>{country}</Button
-              >
-            {/each}
-          {/if}
-        {/each}
+        <Select
+          items={countries.get($city.continent) ?? []}
+          placeholder="country"
+          value={$city.country}
+        />
       </div>
     {/if}
   {/if}
