@@ -1,7 +1,5 @@
 <script>
-  import city from '$stores/city.store.ts'
-
-  $: name = $city.name
+  import RangeSlider from '$components/RangeSlider.svelte'
 </script>
 
 <svelte:head>
@@ -10,7 +8,7 @@
 </svelte:head>
 
 <main>
-  {name}
+  <RangeSlider />
 </main>
 
 <style>
