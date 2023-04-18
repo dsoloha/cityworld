@@ -227,6 +227,7 @@
 
         <Select
           items={countries.get($city.continent) ?? []}
+          name="country"
           placeholder="country"
           value={$city.country}
         />
