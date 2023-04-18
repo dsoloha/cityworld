@@ -3,7 +3,7 @@
   import Select from 'svelte-select'
 
   export let disabled = false
-  export let filterText: string
+  export let filterText = ''
   export let focused = false
   export let items: any[]
   export let multiple = false
