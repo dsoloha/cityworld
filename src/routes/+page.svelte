@@ -1,5 +1,5 @@
 <script>
-  import city from '$stores/city.store.ts'
+  import city from '$stores/city.store'
 
   $: name = $city.name
 </script>
