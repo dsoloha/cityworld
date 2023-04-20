@@ -1,20 +1,22 @@
 <script>
   import Header from '$components/Header.svelte'
   import Footer from '$components/Footer.svelte'
-  import '$lib/css/styles.css'
-  import '$lib/css/fonts.css'
 
-  let player = true
+  import '$lib/css/classes.css'
+  import '$lib/css/fonts.css'
+  import '$lib/css/styles.css'
+
+  import see from '$stores/see.store'
 </script>
 
 <div class="app">
-  {#if player}
+  {#if $see.ui}
     <Header />
   {/if}
   <main>
     <slot />
   </main>
-  {#if player}
+  {#if $see.ui}
     <Footer />
   {/if}
 </div>

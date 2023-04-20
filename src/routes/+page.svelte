@@ -1,7 +1,10 @@
 <script>
-  import city from '$stores/city.store'
+  import Dashboard from './(app)/dashboard.svelte'
+  import Intro from './(intro)/intro.svelte'
+  import Player from './(intro)/player.svelte'
 
-  $: name = $city.name
+  import see from '$stores/see.store'
+  import City from './(intro)/city.svelte'
 </script>
 
 <svelte:head>
@@ -10,11 +13,19 @@
 </svelte:head>
 
 <main>
-  {name}
+  {#if $see.setup.intro}
+    <Intro />
+  {:else if $see.setup.player}
+    <Player />
+  {:else if $see.setup.city}
+    <City />
+  {:else}
+    <Dashboard />
+  {/if}
 </main>
 
 <style>
-  section {
+  main {
     display: flex;
     flex-direction: column;
     justify-content: center;
