@@ -192,7 +192,7 @@
     ],
   ])
 
-  let country: { index: number; value: string; label: string }
+  let country: { index: number; value: string; label: string } | null
 
   $: if (country) {
     $city.country = country.value
@@ -222,6 +222,8 @@
       <Button
         handler={() => {
           $city.continent = continent
+          $city.country = ''
+          country = null
         }}
         focus={$city.continent == continent}>{continent}</Button
       >
