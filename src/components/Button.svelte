@@ -20,7 +20,7 @@
     border-radius: var(--border-radius-small);
     border: 1px solid var(--light-border);
     color: black;
-    padding: 1em 2em;
+    padding: 0.75em 1.5em;
   }
 
   button:hover {
@@ -56,7 +56,7 @@
     margin-left: -4em;
     margin-top: -3em;
     opacity: 0;
-    padding: 1em 2em;
+    padding: 0.5em 1em;
     position: absolute;
     transition: opacity 0.3s;
     visibility: hidden;
