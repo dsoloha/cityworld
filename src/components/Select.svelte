@@ -11,7 +11,7 @@
   export let placeholder: string
   export let required = false
   export let searchable = true
-  export let value: any
+  export let value: any = null
 </script>
 
 <div class="select">
@@ -25,7 +25,7 @@
     {placeholder}
     {required}
     {searchable}
-    {value}
+    bind:value
   />
 </div>
 
@@ -36,9 +36,9 @@
     --border: 1px solid black;
     --item-active-background: black;
     --item-color: black;
-    --item-hover-bg: black;
-    --item-hover-color: white;
-    --item-is-active-color: black;
+    --item-hover-bg: var(--light-bg);
+    --item-is-active-bg: black;
+    --item-is-active-color: white;
     --list-background: white;
     --list-border: 1px solid black;
   }
@@ -49,9 +49,9 @@
       --border: 1px solid white;
       --item-active-background: white;
       --item-color: white;
-      --item-hover-bg: white;
-      --item-hover-color: black;
-      --item-is-active-color: white;
+      --item-hover-bg: var(--dark-bg);
+      --item-is-active-bg: white;
+      --item-is-active-color: black;
       --list-background: black;
       --list-border: 1px solid white;
     }
