@@ -37,6 +37,7 @@ export default class Actor {
     common.set({ id: this.id++ })
   }
 
+  /** Returns the actor's full name. */
   get full() {
     let name = this.name.first
 
