@@ -247,10 +247,9 @@
 
   {#if $city.name}
     <p class="margin-top player-response">
-      This is the city of <b>{$city.name}</b>.
       {#if $city.continent}
         It is located
-        {#if $city.country != 'Australia'}
+        {#if $city.country && $city.country != 'Australia'}
           in the country of <b>{$city.country}</b>,
         {/if}
         on the continent of <b>{$city.continent}</b>.
@@ -259,7 +258,16 @@
   {/if}
 
   {#if $city.name && $city.continent && $city.country}
-    <p class="player-response">This is the city of <b>{$city.name}</b>.</p>
+    <p class="player-response">
+      This is the city of <b>{$city.name}</b>.
+      {#if $city.continent}
+        It is located
+        {#if $city.country && $city.country != 'Australia'}
+          in <b>{$city.country}</b>,
+        {/if}
+        on the continent of <b>{$city.continent}</b>.
+      {/if}
+    </p>
 
     <div class="margin-top">
       <Button
