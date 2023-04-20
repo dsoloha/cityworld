@@ -3,7 +3,7 @@
     return
   }
   export let focus = false
-  export let tooltip: string = ''
+  export let tooltip = ''
   export let type: 'button' | 'submit' | 'reset' = 'button'
 </script>
 
