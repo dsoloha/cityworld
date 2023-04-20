@@ -224,12 +224,14 @@
           $city.continent = continent
           $city.country = ''
           country = null
+
+          if (continent == 'Australia') $city.country = 'Australia'
         }}
         focus={$city.continent == continent}>{continent}</Button
       >
     {/each}
 
-    {#if $city.continent}
+    {#if $city.continent != 'Australia'}
       <div class="margin-top">
         <p><b>In which country?</b></p>
 
@@ -248,7 +250,7 @@
       This is the city of <b>{$city.name}</b>.
       {#if $city.continent}
         It is located
-        {#if $city.country}
+        {#if $city.country != 'Australia'}
           in the country of <b>{$city.country}</b>,
         {/if}
         on the continent of <b>{$city.continent}</b>.
