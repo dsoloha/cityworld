@@ -5,7 +5,7 @@
 
   import player from '$stores/player.store'
   import see from '$stores/see.store'
-  import { capitalize } from '../../util/string'
+  import { capitalize } from '$util/string'
 
   const occupations = [
     ['agriculture', 'You once owned and operated a large farm.'],
