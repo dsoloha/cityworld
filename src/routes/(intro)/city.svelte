@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Button from '$components/Button.svelte'
   import Card from '$components/Card.svelte'
   import Input from '$components/Input.svelte'
@@ -191,6 +191,12 @@
       ],
     ],
   ])
+
+  let country: { index: number; value: string; label: string }
+
+  $: if (country) {
+    $city.country = country.value
+  }
 </script>
 
 <Card>
@@ -229,7 +235,7 @@
           items={countries.get($city.continent) ?? []}
           name="country"
           placeholder="country"
-          value={$city.country}
+          bind:value={country}
         />
       </div>
     {/if}
