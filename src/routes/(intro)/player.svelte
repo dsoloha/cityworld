@@ -21,18 +21,8 @@
     ['crime', 'You were a career criminal.'],
   ]
 
-  let middle = ''
-  let last = ''
-
   $: first = $player.name.first
-  $: if ($player.name.middle) {
-    middle = ` ${$player.name.middle}`
-  }
-  $: if ($player.name.last) {
-    last = ` ${$player.name.last}`
-  }
-
-  $: name = first + middle + last
+  $: name = $player.full
   $: occupation = occupations.find((occupation) => occupation[0] == $player.occupation) ?? ''
 </script>
 
