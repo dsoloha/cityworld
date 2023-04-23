@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.flex {
+  display: flex;
+}
+
 .margin-top {
   margin-top: 2em;
 }
