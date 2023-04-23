@@ -12,24 +12,12 @@
   <meta name="description" content="cityworld" />
 </svelte:head>
 
-<main>
-  {#if $see.setup.intro}
-    <Intro />
-  {:else if $see.setup.player}
-    <Player />
-  {:else if $see.setup.city}
-    <City />
-  {:else}
-    <Dashboard />
-  {/if}
-</main>
-
-<style>
-  main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 0.6;
-  }
-</style>
+{#if $see.setup.intro}
+  <Intro />
+{:else if $see.setup.player}
+  <Player />
+{:else if $see.setup.city}
+  <City />
+{:else}
+  <Dashboard />
+{/if}
