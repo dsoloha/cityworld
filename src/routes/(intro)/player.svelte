@@ -1,8 +1,11 @@
 <script lang="ts">
+  type SelectItem = { index: number; value: string; label: string } | null
   import Button from '$components/Button.svelte'
   import Card from '$components/Card.svelte'
   import Input from '$components/Input.svelte'
+  import Select from '$components/Select.svelte'
 
+  import common from '$stores/common.store'
   import player from '$stores/player.store'
   import see from '$stores/see.store'
   import { capitalize } from '$util/string'
@@ -20,6 +23,17 @@
     ['religion', 'You once led a large congregation.'],
     ['crime', 'You were a career criminal.'],
   ]
+  const units = { weight: ['kg', 'lbs'], height: ['cm', 'in'] }
+
+  let heightUnit: SelectItem = { index: 0, value: 'cm', label: 'cm' }
+  let weightUnit: SelectItem = { index: 0, value: 'kg', label: 'kg' }
+
+  // $: if (heightUnit) {
+  //   $common.units.height = heightUnit.value
+  // }
+  // $: if (weightUnit) {
+  //   $common.units.weight = weightUnit.value
+  // }
 
   $: first = $player.name.first
   $: name = $player.full
@@ -85,15 +99,37 @@
         </p>
 
         <p class="margin-top"><b>How tall are you?</b></p>
-        <Input name="height" placeholder="height" bind:value={$player.height} />cm
+        <div class="flex">
+          <Input name="height" placeholder="height" bind:value={$player.height} />
+          <Select
+            clearable={false}
+            fullWidth={false}
+            items={units.height}
+            name="units-height"
+            placeholder="cm"
+            searchable={false}
+            bind:value={heightUnit}
+          />
+        </div>
         <p class="player-response">
-          You are <b>{$player.height}cm</b> tall.
+          You are <b>{$player.height}{heightUnit?.value}</b> tall.
         </p>
 
         <p class="margin-top"><b>How much do you weigh?</b></p>
-        <Input name="weight" placeholder="weight" bind:value={$player.weight} />kg
+        <div class="flex">
+          <Input name="weight" placeholder="weight" bind:value={$player.weight} />
+          <Select
+            clearable={false}
+            fullWidth={false}
+            items={units.weight}
+            name="units-weight"
+            placeholder="kg"
+            searchable={false}
+            bind:value={weightUnit}
+          />
+        </div>
         <p class="player-response">
-          You weigh <b>{$player.weight}kg</b>.
+          You weigh <b>{$player.weight}{weightUnit?.value}</b>.
         </p>
       {/if}
     {/if}
