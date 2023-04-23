@@ -231,7 +231,7 @@
       >
     {/each}
 
-    {#if $city.continent != 'Australia'}
+    {#if $city.continent && $city.continent != 'Australia'}
       <div class="margin-top">
         <p><b>In which country?</b></p>
 
