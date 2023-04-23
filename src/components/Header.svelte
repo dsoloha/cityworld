@@ -1,7 +1,7 @@
 <script>
   import Editable from '$components/Editable.svelte'
   import { page } from '$app/stores'
-  import city from '$stores/city.store.ts'
+  import city from '$stores/city.store'
 
   const path = $page.url.pathname
 </script>
