@@ -233,7 +233,7 @@
 
     {#if $city.continent && $city.continent != 'Australia'}
       <div class="margin-top">
-        <p><b>In which country?</b></p>
+        <p><b>In which former country?</b></p>
 
         <Select
           items={countries.get($city.continent) ?? []}

@@ -14,10 +14,6 @@
     You are {$player.name.first}. You are a {$player.height}cm tall, {$player.weight}kg {$player.sex}.
   </p>
   <p>
-    Your city, {$city.name}, is located
-    {#if $city.country && $city.country != 'Australia'}
-      in {$city.country},
-    {/if}
-    on the continent of {$city.continent}.
+    Your city, {$city.name}, is located in what was once known as {$city.country}.
   </p>
 </Card>
