@@ -1,7 +1,5 @@
 <script lang="ts">
-  export let handler = () => {
-    return
-  }
+  export let handler: () => void
   export let focus = false
   export let to: string
 </script>
@@ -60,9 +58,19 @@
       color: white;
     }
 
+    div {
+      background-color: black;
+      border: 1px solid var(--dark-border);
+    }
+
     div:hover {
       background-color: white;
       border-color: black;
+      color: black;
+    }
+
+    div:hover a {
+      background-color: white;
       color: black;
     }
 
