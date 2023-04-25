@@ -20,7 +20,7 @@
     border-radius: var(--border-radius-small);
     border: 1px solid var(--light-border);
     color: black;
-    padding: 0.75em 1.5em;
+    padding: 1em 2em;
   }
 
   button:hover {

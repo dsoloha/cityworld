@@ -20,7 +20,7 @@
     background-color: white;
     border-radius: var(--border-radius-small);
     border: 1px solid var(--light-border);
-    padding: 1em;
+    padding: 1em 2em;
     width: fit-content;
   }
 
