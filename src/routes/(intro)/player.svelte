@@ -5,7 +5,6 @@
   import Input from '$components/Input.svelte'
   import Select from '$components/Select.svelte'
 
-  import common from '$stores/common.store'
   import player from '$stores/player.store'
   import see from '$stores/see.store'
   import { capitalize } from '$util/string'
