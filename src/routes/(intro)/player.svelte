@@ -28,13 +28,6 @@
   let heightUnit: SelectItem = { index: 0, value: 'cm', label: 'cm' }
   let weightUnit: SelectItem = { index: 0, value: 'kg', label: 'kg' }
 
-  // $: if (heightUnit) {
-  //   $common.units.height = heightUnit.value
-  // }
-  // $: if (weightUnit) {
-  //   $common.units.weight = weightUnit.value
-  // }
-
   $: first = $player.name.first
   $: name = $player.full
   $: occupation = occupations.find((occupation) => occupation[0] == $player.occupation) ?? ''
