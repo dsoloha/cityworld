@@ -41,7 +41,7 @@
       $see.setup.intro = false
     }}>I already have a settlement.</Button
   >
-  <Button
+  <!-- <Button
     handler={() => {
       $city.name = 'test'
       $city.continent = 'Africa'
@@ -52,5 +52,5 @@
       $see.setup.player = false
       $see.ui = true
     }}>Debug</Button
-  >
+  > -->
 </Card>
