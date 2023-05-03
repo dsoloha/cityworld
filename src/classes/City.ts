@@ -1,18 +1,28 @@
-import common from '$stores/common.store'
-import { get } from 'svelte/store'
+import { nanoid } from 'nanoid'
+
+type Continent =
+  | 'Africa'
+  | 'Antarctica'
+  | 'Asia'
+  | 'Australia'
+  | 'Europe'
+  | 'North America'
+  | 'South America'
 
 export default class City {
-  continent: string
+  /** The continent on which the city is located. */
+  continent: Continent
+  /** The country in which the city is located. */
   country: string
-  id: number
+  /** The city's ID. */
+  ID: string
+  /** The city's name. */
   name: string
 
   constructor(name?: string) {
-    this.continent = ''
+    this.continent = 'Africa'
     this.country = ''
-    this.id = get(common).id
+    this.ID = nanoid()
     this.name = name ?? ''
-
-    common.set({ id: this.id++ })
   }
 }
