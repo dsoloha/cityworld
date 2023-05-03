@@ -1,4 +1,6 @@
 <script lang="ts">
+  import type { Continent } from '$classes/City'
+
   import Button from '$components/Button.svelte'
   import Card from '$components/Card.svelte'
   import Input from '$components/Input.svelte'
@@ -8,7 +10,14 @@
   import player from '$stores/player.store'
   import see from '$stores/see.store'
 
-  const continents = ['Africa', 'Asia', 'Australia', 'Europe', 'North America', 'South America']
+  const continents: Continent[] = [
+    'Africa',
+    'Asia',
+    'Australia',
+    'Europe',
+    'North America',
+    'South America',
+  ]
   const countries = new Map([
     [
       'Africa',
