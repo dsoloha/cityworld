@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid'
 
-type Continent =
+export type Continent =
   | 'Africa'
   | 'Antarctica'
   | 'Asia'
