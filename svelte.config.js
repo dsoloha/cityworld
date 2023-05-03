@@ -13,6 +13,7 @@ const config = {
       $classes: './src/classes/',
       $components: './src/components/',
       $stores: './src/stores/',
+      $util: './src/util',
     },
   },
 }

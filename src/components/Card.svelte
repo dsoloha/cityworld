@@ -10,7 +10,6 @@
     color: var(--light-text);
     margin-top: 2em;
     padding: 4em;
-    width: 80%;
   }
 
   @media (prefers-color-scheme: dark) {

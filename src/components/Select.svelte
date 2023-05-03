@@ -2,9 +2,11 @@
   // from https://github.com/rob-balfre/svelte-select
   import Select from 'svelte-select'
 
+  export let clearable = true
   export let disabled = false
   export let filterText = ''
   export let focused = false
+  export let fullWidth = true
   export let items: any[]
   export let multiple = false
   export let name: string
@@ -14,8 +16,9 @@
   export let value: any = null
 </script>
 
-<div class="select">
+<span class="select" class:full={fullWidth}>
   <Select
+    {clearable}
     {disabled}
     {filterText}
     {focused}
@@ -27,13 +30,14 @@
     {searchable}
     bind:value
   />
-</div>
+</span>
 
 <style>
   .select {
     --background: white;
     --border-radius: var(--border-radius-small);
-    --border: 1px solid black;
+    --border: 1px solid var(--light-border);
+    --border-focused: 1px solid black;
     --item-active-background: black;
     --item-color: black;
     --item-hover-bg: var(--light-bg);
@@ -41,12 +45,18 @@
     --item-is-active-color: white;
     --list-background: white;
     --list-border: 1px solid black;
+    --width: min-content;
+  }
+
+  .select.full {
+    --width: auto;
   }
 
   @media (prefers-color-scheme: dark) {
     .select {
       --background: black;
-      --border: 1px solid white;
+      --border: 1px solid var(--dark-border);
+      --border-focused: 1px solid white;
       --item-active-background: white;
       --item-color: white;
       --item-hover-bg: var(--dark-bg);

@@ -1,11 +1,10 @@
-import common from '$stores/common.store'
-import { get } from 'svelte/store'
+import { nanoid } from 'nanoid'
 
 export default class Actor {
   /** The actor's height, in cm. */
   height: number
   /** The actor's ID. */
-  id: number
+  ID: string
   /** The actor's name. */
   name: {
     /** The actor's first name. */
@@ -24,7 +23,7 @@ export default class Actor {
 
   constructor(name?: { first: string; middle: string; last: string }) {
     this.height = 180
-    this.id = get(common).id
+    this.ID = nanoid()
     this.name = name ?? {
       first: '',
       middle: '',
@@ -33,8 +32,6 @@ export default class Actor {
     this.occupation = ''
     this.sex = ''
     this.weight = 70
-
-    common.set({ id: this.id++ })
   }
 
   /** Returns the actor's full name. */

@@ -33,6 +33,7 @@
   },
   "type": "module",
   "dependencies": {
+    "nanoid": "^4.0.2",
     "svelte-select": "^5.6.0"
   }
 }
