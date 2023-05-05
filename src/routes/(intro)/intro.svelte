@@ -30,6 +30,7 @@
   <p>Are you up to the challenge?</p>
   <Button
     focus
+    tooltip="Recommended for new players."
     handler={() => {
       $see.setup.player = true
       $see.setup.intro = false
@@ -39,7 +40,8 @@
     handler={() => {
       $see.setup.login = true
       $see.setup.intro = false
-    }}>I already have a settlement.</Button
+    }}
+    tooltip="Not recommended for new players.">I already have a settlement.</Button
   >
   <!-- <Button
     handler={() => {
