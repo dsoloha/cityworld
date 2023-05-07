@@ -9,11 +9,40 @@ export type Continent =
   | 'North America'
   | 'South America'
 
+export type Region =
+  | 'Australasia'
+  | 'Caribbean'
+  | 'Central America'
+  | 'Central Asia'
+  | 'Channel Islands'
+  | 'Eastern Africa'
+  | 'Eastern Asia'
+  | 'Eastern Europe'
+  | 'Melanesia'
+  | 'Micronesia'
+  | 'Middle Africa'
+  | 'Northern Africa'
+  | 'Northern America'
+  | 'Northern Asia'
+  | 'Northern Europe'
+  | 'Oceania'
+  | 'Polynesia'
+  | 'South America'
+  | 'Southeastern Asia'
+  | 'Southern Africa'
+  | 'Southern Asia'
+  | 'Southern Europe'
+  | 'Western Africa'
+  | 'Western Asia'
+  | 'Western Europe'
+
 export type Terrain =
   | 'canyon'
+  | 'coastal'
   | 'desert'
   | 'forest'
   | 'hill'
+  | 'island'
   | 'jungle'
   | 'marsh'
   | 'mesa'
@@ -36,6 +65,8 @@ export default class City {
   ID: string
   /** The city's name. */
   name: string
+  /** The region of the world in which the city is located. */
+  region: Region
   /** The type of terrain in which the city is located. */
   terrain: Terrain
 
@@ -44,6 +75,7 @@ export default class City {
     this.country = ''
     this.ID = nanoid()
     this.name = name ?? ''
+    this.region = 'Australasia'
     this.terrain = 'canyon'
   }
 }
