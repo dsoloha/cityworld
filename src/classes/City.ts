@@ -59,23 +59,20 @@ export type Terrain =
 export default class City {
   /** The continent on which the city is located. */
   continent: Continent
-  /** The country in which the city is located. */
-  country: string
   /** The city's ID. */
   ID: string
   /** The city's name. */
   name: string
   /** The region of the world in which the city is located. */
-  region: Region
+  region: Region | undefined
   /** The type of terrain in which the city is located. */
   terrain: Terrain
 
   constructor(name?: string) {
     this.continent = 'Africa'
-    this.country = ''
     this.ID = nanoid()
     this.name = name ?? ''
-    this.region = 'Australasia'
+    this.region = undefined
     this.terrain = 'canyon'
   }
 }
