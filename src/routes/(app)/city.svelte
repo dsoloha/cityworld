@@ -6,6 +6,6 @@
 
 <Card>
   <p>
-    Your city, {$city.name}, is located in what was once known as {$city.country}.
+    Your city, {$city.name}, is located in the region of {$city.region}.
   </p>
 </Card>
