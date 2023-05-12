@@ -66,13 +66,13 @@ export default class City {
   /** The region of the world in which the city is located. */
   region: Region | undefined
   /** The type of terrain in which the city is located. */
-  terrain: Terrain
+  terrain: Terrain | undefined
 
   constructor(name?: string) {
     this.continent = 'Africa'
     this.ID = nanoid()
     this.name = name ?? ''
     this.region = undefined
-    this.terrain = 'canyon'
+    this.terrain = undefined
   }
 }
