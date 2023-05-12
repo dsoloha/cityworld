@@ -6,6 +6,8 @@
   import Input from '$components/Input.svelte'
   import Select from '$components/Select.svelte'
 
+  import regionTerrain from '$data/regions'
+
   import city from '$stores/city.store'
   import player from '$stores/player.store'
   import see from '$stores/see.store'
@@ -92,9 +94,7 @@
         />
       </div>
     {/if}
-  {/if}
 
-  {#if $city.name}
     <p class="margin-top player-response">
       {#if $city.continent}
         It is located
@@ -104,6 +104,18 @@
         on or near the continent of <b>{$city.continent}</b>.
       {/if}
     </p>
+
+    {#if $city.region}
+      <div class="margin-top">
+        <p><b>What type of terrain surrounds {$city.name}?</b></p>
+
+        <Select
+          items={regionTerrain.get($city.region) ?? []}
+          name="terrain"
+          placeholder="terrain"
+        />
+      </div>
+    {/if}
   {/if}
 
   {#if $city.name && $city.continent && $city.region}
