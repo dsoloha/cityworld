@@ -51,7 +51,6 @@ export type Terrain =
   | 'ocean'
   | 'plain'
   | 'plateau'
-  | 'playa'
   | 'river'
   | 'tundra'
   | 'valley'
