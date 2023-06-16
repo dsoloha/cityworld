@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Continent, Region } from '$classes/City'
+  import type { Continent, Region, Terrain } from '$classes/City'
 
   import Button from '$components/Button.svelte'
   import Card from '$components/Card.svelte'
@@ -11,6 +11,8 @@
   import city from '$stores/city.store'
   import player from '$stores/player.store'
   import see from '$stores/see.store'
+
+  import type { SelectItem } from '$util/types'
 
   const continents: Continent[] = [
     'Africa',
@@ -45,10 +47,14 @@
     ['South America', ['Caribbean', 'South America']],
   ])
 
-  let region: { index: number; value: Region; label: Region } | null
+  let region: SelectItem<Region> | null
+  let terrain: SelectItem<Terrain> | null
 
   $: if (region) {
     $city.region = region.value
+  }
+  $: if (terrain) {
+    $city.terrain = terrain.value
   }
 </script>
 
@@ -95,15 +101,15 @@
       </div>
     {/if}
 
-    <p class="margin-top player-response">
-      {#if $city.continent}
+    {#if $city.continent}
+      <p class="margin-top player-response">
         It is located
         {#if $city.region}
           in the <b>{$city.region}</b> region,
         {/if}
         on or near the continent of <b>{$city.continent}</b>.
-      {/if}
-    </p>
+      </p>
+    {/if}
 
     {#if $city.region}
       <div class="margin-top">
@@ -113,8 +119,15 @@
           items={regionTerrain.get($city.region) ?? []}
           name="terrain"
           placeholder="terrain"
+          bind:value={terrain}
         />
       </div>
+
+      {#if $city.terrain}
+        <p class="margin-top player-response">
+          {$city.name} is surrounded by {$city.terrain} terrain.
+        </p>
+      {/if}
     {/if}
   {/if}
 
@@ -123,6 +136,9 @@
       This is the city of <b>{$city.name}</b>.
       {#if $city.continent}
         It is located
+        {#if $city.terrain}
+          in a {$city.terrain} area
+        {/if}
         {#if $city.region}
           in <b>{$city.region}</b>,
         {/if}
