@@ -1,5 +1,4 @@
 <script lang="ts">
-  type SelectItem = { index: number; value: string; label: string } | null
   import Button from '$components/Button.svelte'
   import Card from '$components/Card.svelte'
   import Input from '$components/Input.svelte'
@@ -8,6 +7,7 @@
   import player from '$stores/player.store'
   import see from '$stores/see.store'
   import { capitalize } from '$util/string'
+  import type { SelectItem } from '$util/types'
 
   const occupations = [
     ['agriculture', 'You once owned and operated a large farm.'],
@@ -24,8 +24,8 @@
   ]
   const units = { weight: ['kg', 'lbs'], height: ['cm', 'in'] }
 
-  let heightUnit: SelectItem = { index: 0, value: 'cm', label: 'cm' }
-  let weightUnit: SelectItem = { index: 0, value: 'kg', label: 'kg' }
+  let heightUnit: SelectItem<string> = { index: 0, value: 'cm', label: 'cm' }
+  let weightUnit: SelectItem<string> = { index: 0, value: 'kg', label: 'kg' }
 
   $: first = $player.name.first
   $: name = $player.full
