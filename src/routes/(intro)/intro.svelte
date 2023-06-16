@@ -22,8 +22,8 @@
     brutality and inhumanity that would be found in the bloody conflicts following.
   </p>
   <p>
-    The world as we once knew it no longer exists. Most of the world's governments have collapsed,
-    and the few that still exist have found themselves weak and easy targets. New city-states are
+    The world as we once knew it no longer exists. Many of the world's governments have collapsed,
+    and those that still remain have found themselves weak and disorganized. New city-states are
     cropping up seemingly daily as the remnants of humanity coalesce, and the ever-growing
     settlement nearby seems to be in need of a leader.
   </p>
@@ -47,7 +47,7 @@
     handler={() => {
       $city.name = 'test'
       $city.continent = 'Africa'
-      $city.country = 'test'
+      $city.region = 'Australasia'
 
       $see.setup.city = false
       $see.setup.intro = false
