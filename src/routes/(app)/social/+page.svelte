@@ -3,5 +3,5 @@
 </script>
 
 <Card>
-  <h1>Social</h1>
+  <h1>social</h1>
 </Card>

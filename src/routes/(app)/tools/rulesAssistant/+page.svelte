@@ -1,1 +1,1 @@
-<h1>Rules Assistant</h1>
+<h1>rules assistant</h1>

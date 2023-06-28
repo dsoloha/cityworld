@@ -3,5 +3,5 @@
 </script>
 
 <Card>
-  <h1>Manage</h1>
+  <h1>manage</h1>
 </Card>

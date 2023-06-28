@@ -3,7 +3,7 @@
 </script>
 
 <Card>
-  <h1>Tools</h1>
+  <h1>tools</h1>
 
   <a href="/tools/overview">Overview</a>
   <a href="/tools/personalAttention">Personal Attention</a>
