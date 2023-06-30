@@ -5,7 +5,15 @@
 <Card>
   <h1>tools</h1>
 
-  <a href="/tools/overview">Overview</a>
-  <a href="/tools/personalAttention">Personal Attention</a>
-  <a href="/tools/rulesAssistant">Rules Assistant</a>
+  <ul>
+    <li>
+      <a href="/tools/overview">overview</a>
+    </li>
+    <li>
+      <a href="/tools/attention">personal attention</a>
+    </li>
+    <li>
+      <a href="/tools/rules">rules</a>
+    </li>
+  </ul>
 </Card>
