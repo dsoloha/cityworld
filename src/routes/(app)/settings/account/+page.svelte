@@ -1,1 +1,1 @@
-<h1>Account Settings</h1>
+<h1>account settings</h1>
