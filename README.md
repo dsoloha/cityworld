@@ -1,6 +1,6 @@
 # cityworld
 
-cityworld is a free, open-source, text-based role-playing game about creating the city (and eventually the planet) of your dreams.
+cityworld is a free, open-source, text-based role-playing game about creating the city (and perhaps more) of your dreams.
 
 ⚠️ This game is currently very early in development, and will undergo many, *many* changes in the future.
 
