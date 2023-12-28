@@ -21,6 +21,7 @@
     border: 1px solid var(--light-border);
     color: black;
     padding: 1em 2em;
+    margin: 0.5em;
   }
 
   button:hover {

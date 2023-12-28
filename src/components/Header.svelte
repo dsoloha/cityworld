@@ -1,5 +1,4 @@
 <script>
-  import Editable from '$components/Editable.svelte'
   import { page } from '$app/stores'
   import city from '$stores/city.store'
 
@@ -7,78 +6,62 @@
 </script>
 
 <header>
-  {#if $page.url.pathname === '/'}
-    <h1><Editable bind:value={$city.name} /></h1>
-  {:else}
-    <h1>{$page.url.pathname.charAt(1).toUpperCase() + $page.url.pathname.slice(2)}</h1>
-  {/if}
-  <nav>
+  <div class="info">
+    <div class="city-name">
+      <p>{$city.name}</p>
+    </div>
+    <div class="currency">
+      <p>$0</p>
+    </div>
+    <div class="population">
+      <p>0 citizens</p>
+    </div>
+  </div>
+  <div class="date">
+    <div class="week">
+      <p>week 0</p>
+    </div>
+  </div>
+  <div class="settings">
     <ul>
-      <li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-        <a href="/">Home</a>
+      <li aria-current={path === '/' ? 'page' : undefined}>
+        <a href="/">home</a>
       </li>
-      <li aria-current={$page.url.pathname === '/manage' ? 'page' : undefined}>
-        <a href="/manage">Manage</a>
+      <li aria-current={path.startsWith('/options') ? 'page' : undefined}>
+        <a href="/options">options</a>
       </li>
-      <li aria-current={$page.url.pathname === '/social' ? 'page' : undefined}>
-        <a href="/social">Social</a>
+      <li aria-current={path.startsWith('/profile') ? 'page' : undefined}>
+        <a href="/profile">profile</a>
       </li>
-      <li aria-current={$page.url.pathname === '/facilities' ? 'page' : undefined}>
-        <a href="/facilities">Facilities</a>
-      </li>
-      <li aria-current={$page.url.pathname === '/locations' ? 'page' : undefined}>
-        <a href="/locations">Locations</a>
-      </li>
-      <li aria-current={$page.url.pathname.startsWith('/tools') ? 'page' : undefined}>
-        <a href="/tools">Tools</a>
-      </li>
-      <li aria-current={$page.url.pathname.startsWith('/settings') ? 'page' : undefined}>
-        <a href="/settings">Settings</a>
+      <li aria-current={path.startsWith('/help') ? 'page' : undefined}>
+        <a href="/help">help</a>
       </li>
     </ul>
-  </nav>
+  </div>
 </header>
 
 <style>
-  header {
-    background-color: var(--light-focus);
-    border-bottom: 1px solid var(--light-border);
-    display: flex;
-    justify-content: space-between;
-    padding: 1em;
+  .city-name {
+    color: var(--light-text);
+    font-weight: bold;
   }
 
-  header h1 {
-    font-size: 1.75em;
-    font-weight: 300;
-    margin-bottom: 0;
+  .info {
+    color: var(--text-secondary);
+    display: flex;
     margin-left: 2em;
-    margin-top: 0;
   }
 
-  nav {
+  .info > * {
+    padding: 0 1em;
+  }
+
+  .settings {
     display: flex;
     justify-content: center;
   }
 
-  ul {
-    align-items: center;
-    background-size: contain;
-    display: flex;
-    height: 3em;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: relative;
-  }
-
-  li {
-    position: relative;
-    height: 100%;
-  }
-
-  nav a {
+  .settings a {
     align-items: center;
     color: var(--light-text);
     display: flex;
@@ -92,6 +75,30 @@
     transition: color 0.2s linear;
   }
 
+  header {
+    background-color: var(--light-focus);
+    border-bottom: 1px solid var(--light-border);
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+  }
+
+  ul {
+    align-items: center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  li {
+    position: relative;
+    height: 100%;
+  }
+
   li:not([aria-current='page']) a {
     color: var(--light-link-inactive);
   }
@@ -101,6 +108,10 @@
   }
 
   @media (prefers-color-scheme: dark) {
+    .city-name {
+      color: var(--dark-text);
+    }
+
     header {
       background-color: var(--dark-focus);
       border-bottom: 1px solid var(--dark-border);

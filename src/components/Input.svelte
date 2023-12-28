@@ -13,6 +13,7 @@
     border: 1px solid var(--light-border);
     box-sizing: content-box;
     color: var(--light-text);
+    margin: 0.5em;
     max-width: 100%;
     min-width: fit-content;
     outline: none;
