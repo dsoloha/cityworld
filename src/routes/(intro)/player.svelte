@@ -35,8 +35,8 @@
 <Card>
   <p>
     The people living there now aren't going to accept just anyone as a leader. <b
-  >Who are you, and why should you take charge?</b
-  >
+      >Who are you, and why should you take charge?</b
+    >
   </p>
   <Input name="player-name-first" placeholder="first name" bind:value={$player.name.first} />
 
@@ -75,16 +75,16 @@
           handler={() => {
             $player.sex = 'male'
           }}
-          focus={$player.sex === 'male'}>Male
-        </Button
-        >
+          focus={$player.sex === 'male'}
+          >Male
+        </Button>
         <Button
           handler={() => {
             $player.sex = 'female'
           }}
-          focus={$player.sex === 'female'}>Female
-        </Button
-        >
+          focus={$player.sex === 'female'}
+          >Female
+        </Button>
       </div>
 
       {#if $player.sex}
@@ -156,9 +156,9 @@
           $see.setup.intro = false
           $see.setup.player = false
           $see.ui = false
-        }}>Continue
-      </Button
-      >
+        }}
+        >Continue
+      </Button>
     </div>
   {/if}
 </Card>
