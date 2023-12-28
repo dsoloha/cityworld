@@ -1,134 +1,136 @@
 :root {
-  --light-focus: white;
-  --light-bg: hsl(210, 10%, 95%);
-  --light-border: hsl(210, 10%, 80%);
-  --light-accent: hsl(210, 10%, 75%);
-  --light-text: hsl(210, 10%, 15%);
-  --light-link: hsl(210, 10%, 25%);
-  --light-link-hover: hsl(210, 10%, 15%);
-  --light-link-inactive: hsl(210, 10%, 45%);
+    --light-focus: white;
+    --light-bg: hsl(210, 10%, 95%);
+    --light-border: hsl(210, 10%, 80%);
+    --light-accent: hsl(210, 10%, 75%);
+    --light-text: hsl(210, 10%, 15%);
+    --light-link: hsl(210, 10%, 25%);
+    --light-link-hover: hsl(210, 10%, 15%);
+    --light-link-inactive: hsl(210, 10%, 45%);
 
-  --dark-focus: black;
-  --dark-bg: hsl(210, 10%, 5%);
-  --dark-border: hsl(210, 10%, 20%);
-  --dark-accent: hsl(210, 10%, 25%);
-  --dark-text: hsl(210, 10%, 85%);
-  --dark-link: hsl(210, 10%, 75%);
-  --dark-link-hover: hsl(210, 10%, 85%);
-  --dark-link-inactive: hsl(210, 10%, 55%);
+    --dark-focus: black;
+    --dark-bg: hsl(210, 10%, 5%);
+    --dark-border: hsl(210, 10%, 20%);
+    --dark-accent: hsl(210, 10%, 25%);
+    --dark-text: hsl(210, 10%, 85%);
+    --dark-link: hsl(210, 10%, 75%);
+    --dark-link-hover: hsl(210, 10%, 85%);
+    --dark-link-inactive: hsl(210, 10%, 55%);
 
-  --border-radius-small: 0.25em;
-  --border-radius-large: 0.5em;
+    --text-secondary: hsl(210, 10%, 50%);
 
-  --column-width: 42rem;
-  --column-margin-top: 4rem;
+    --border-radius-small: 0.25em;
+    --border-radius-large: 0.5em;
 
-  font-family: var(--font-body);
-  color: var(--light-text);
-  line-height: 1.5;
-  text-decoration: none;
+    --standard-unit: calc(100vw / 12);
+    --column-margin-top: 4rem;
+
+    font-family: var(--font-body);
+    color: var(--light-text);
+    line-height: 1.5;
+    text-decoration: none;
 }
 
 body {
-  min-height: 100vh;
-  margin: 0;
-  background-attachment: fixed;
-  background-color: var(--light-bg);
-  background-size: 100vw 100vh;
+    min-height: 100vh;
+    margin: 0;
+    background-attachment: fixed;
+    background-color: var(--light-bg);
+    background-size: 100vw 100vh;
 }
 
 h1,
 h2 {
-  font-family: var(--font-header);
-  font-weight: 200;
+    font-family: var(--font-header);
+    font-weight: 200;
 }
 
 a {
-  color: var(--light-link);
+    color: var(--light-link);
 }
 
 a:hover {
-  color: var(--light-link-hover);
-  text-decoration: underline;
+    color: var(--light-link-hover);
+    text-decoration: underline;
 }
 
 b {
-  font-weight: 1000;
-  font-size: 1.0125em;
+    font-weight: 1000;
+    font-size: 1.0125em;
 }
 
 h1 {
-  text-align: center;
+    text-align: center;
 }
 
 pre {
-  font-size: 16px;
-  font-family: var(--font-mono);
-  background-color: rgba(255, 255, 255, 0.45);
-  border-radius: var(--border-radius-small);
-  box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
-  padding: 0.5em;
-  overflow-x: auto;
+    font-size: 16px;
+    font-family: var(--font-mono);
+    background-color: rgba(255, 255, 255, 0.45);
+    border-radius: var(--border-radius-small);
+    box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
+    padding: 0.5em;
+    overflow-x: auto;
 }
 
 input,
 button {
-  font-size: inherit;
-  font-family: inherit;
+    font-size: inherit;
+    font-family: inherit;
 }
 
 button:focus:not(:focus-visible) {
-  outline: none;
+    outline: none;
 }
 
 @media (max-width: 600px) {
-  body {
-    padding: 2em;
-  }
+    body {
+        padding: 2em;
+    }
 
-  h1 {
-    font-size: 1em;
-  }
+    h1 {
+        font-size: 1em;
+    }
 }
 
 @media (min-width: 600px) {
-  h1 {
-    font-size: 1.5em;
-  }
+    h1 {
+        font-size: 1.5em;
+    }
 }
 
 @media (min-width: 768px) {
-  h1 {
-    font-size: 2em;
-  }
+    h1 {
+        font-size: 2em;
+    }
 }
 
 @media (min-width: 992px) {
-  h1 {
-    font-size: 2.5em;
-  }
+    h1 {
+        font-size: 2.5em;
+    }
 }
 
 @media (min-width: 1200px) {
-  h1 {
-    font-size: 3em;
-  }
+    h1 {
+        font-size: 3em;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    color: var(--dark-text);
-  }
+    :root {
+        color: var(--dark-text);
+    }
 
-  body {
-    background-color: var(--dark-bg);
-  }
+    body {
+        background-color: var(--dark-bg);
+    }
 
-  a {
-    color: var(--dark-link);
-  }
+    a {
+        color: var(--dark-link);
+    }
 
-  a:hover {
-    color: var(--dark-link-hover);
-  }
+    a:hover {
+        color: var(--dark-link-hover);
+    }
 }

@@ -34,8 +34,14 @@
     flex-direction: column;
     padding: 1rem;
     width: 100%;
-    max-width: 64rem;
+    max-width: calc(var(--standard-unit) * 8);
     margin: 0 auto;
     box-sizing: border-box;
+  }
+
+  @media screen and (max-width: 600px) {
+    main {
+      max-width: 100vw;
+    }
   }
 </style>
