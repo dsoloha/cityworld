@@ -1,3 +1,5 @@
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://stand-with-ukraine.pp.ua)
+
 # cityworld
 
 cityworld[sup]*[/sup] is a free, open-source, text-based role-playing game about a fictional, but very possible, future.
