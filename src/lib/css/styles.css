@@ -17,10 +17,13 @@
   --dark-link-hover: hsl(210, 10%, 85%);
   --dark-link-inactive: hsl(210, 10%, 55%);
 
+  --text-secondary: hsl(210, 10%, 50%);
+
   --border-radius-small: 0.25em;
   --border-radius-large: 0.5em;
 
-  --column-width: 42rem;
+  --standard-unit: calc(100vw / 12);
+
   --column-margin-top: 4rem;
 
   font-family: var(--font-body);
