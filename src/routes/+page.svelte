@@ -1,27 +1,27 @@
 <script>
-    import see from '$stores/see.store'
+  import see from '$stores/see.store'
 
-    import Dashboard from './(app)/dashboard.svelte'
+  import Dashboard from './(app)/dashboard.svelte'
 
-    import City from './(intro)/city.svelte'
-    import Intro from './(intro)/intro.svelte'
-    import Login from './(intro)/login.svelte'
-    import Player from './(intro)/player.svelte'
+  import City from './(intro)/city.svelte'
+  import Intro from './(intro)/intro.svelte'
+  import Login from './(intro)/login.svelte'
+  import Player from './(intro)/player.svelte'
 </script>
 
 <svelte:head>
-    <title>cityworld</title>
-    <meta name="description" content="cityworld" />
+  <title>cityworld</title>
+  <meta name="description" content="cityworld" />
 </svelte:head>
 
 {#if $see.setup.intro}
-    <Intro />
+  <Intro />
 {:else if $see.setup.login}
-    <Login />
+  <Login />
 {:else if $see.setup.player}
-    <Player />
+  <Player />
 {:else if $see.setup.city}
-    <City />
+  <City />
 {:else}
-    <Dashboard />
+  <Dashboard />
 {/if}

@@ -2,11 +2,11 @@
 
 # cityworld
 
-cityworld<sup>*</sup> is a free, open-source, text-based role-playing game about a fictional, but very possible, future.
+cityworld<sup>\*</sup> is a free, open-source, text-based role-playing game about a fictional, but very possible, future.
 Its aim is to be as grounded and realistic as it can, while providing players with as much and freedom and choice as
 possible.
 
-⚠️ This game is currently very early in development, and will undergo many, *many* changes in the future.
+⚠️ This game is currently very early in development, and will undergo many, _many_ changes in the future.
 
 ## Contributing
 
@@ -16,4 +16,4 @@ cityworld is currently in pre-alpha, and therefore not accepting contributions a
 
 If you've found a bug or some other issue, please open a new issue with as much detail as possible. Thank you!
 
-<sup>*</sup> name subject to change if I think of a better one
+<sup>\*</sup> name subject to change if I think of a better one
