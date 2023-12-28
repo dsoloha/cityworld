@@ -38,7 +38,7 @@ const regions: Map<Region, Terrain[]> = new Map([
     'Northern Asia',
     ['canyon', 'coastal', 'forest', 'hill', 'mountain', 'plateau', 'tundra', 'valley'],
   ],
-  ['Northern Europe', ['canyon', 'coastal', 'forest', 'hill', 'tundra', 'valley']],
+  ['Northern Europe', ['canyon', 'coastal', 'forest', 'hill', 'mountain', 'tundra', 'valley']],
   ['Oceania', ['coastal', 'hill', 'island', 'valley']],
   ['Polynesia', ['valley', 'coastal', 'hill', 'island']],
   [
