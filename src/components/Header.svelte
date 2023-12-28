@@ -112,13 +112,13 @@
       color: var(--dark-text);
     }
 
+    .settings a {
+      color: var(--dark-text);
+    }
+
     header {
       background-color: var(--dark-focus);
       border-bottom: 1px solid var(--dark-border);
-    }
-
-    nav a {
-      color: var(--dark-text);
     }
 
     li:not([aria-current='page']) a {
