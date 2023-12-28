@@ -10,7 +10,7 @@ possible.
 
 ## Contributing
 
-cityworld is currently in pre-alpha, and not currently accepting contributions.
+cityworld is currently in pre-alpha, and therefore not accepting contributions at this time. This is likely to change once the game is in a stable state and ready for content.
 
 ## Issues
 
