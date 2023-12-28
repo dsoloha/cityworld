@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Region` type
 - `Terrain` type
 - `SelectItem` type
+- `.region` and `.terrain` properties in `City` class
 
 ### Removed
 
