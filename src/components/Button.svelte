@@ -8,7 +8,7 @@
 </script>
 
 <button on:click={handler} class:focus {type}>
-  {#if tooltip != ''}
+  {#if tooltip !== ''}
     <span>{tooltip}</span>
   {/if}
   <slot />

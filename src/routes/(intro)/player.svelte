@@ -28,7 +28,7 @@
   let weightUnit: SelectItem<string> = { index: 0, value: 'kg', label: 'kg' }
 
   $: first = $player.name.first
-  $: name = $player.full
+  $: fullName = $player.full
   $: occupation = occupations.find((occupation) => occupation[0] == $player.occupation) ?? ''
 </script>
 
@@ -56,7 +56,7 @@
           handler={() => {
             $player.occupation = occupation[0]
           }}
-          focus={$player.occupation == occupation[0]}
+          focus={$player.occupation === occupation[0]}
           tooltip={occupation[1]}>{capitalize(occupation[0])}</Button
         >
       {/each}
@@ -75,13 +75,13 @@
           handler={() => {
             $player.sex = 'male'
           }}
-          focus={$player.sex == 'male'}>Male</Button
+          focus={$player.sex === 'male'}>Male</Button
         >
         <Button
           handler={() => {
             $player.sex = 'female'
           }}
-          focus={$player.sex == 'female'}>Female</Button
+          focus={$player.sex === 'female'}>Female</Button
         >
       </div>
 
@@ -129,7 +129,7 @@
 
   {#if $player.name.first}
     <p class="margin-top player-response">
-      You are <b>{name}</b>.
+      You are <b>{fullName}</b>.
       {#if $player.occupation}
         <b>{occupation[1]}</b>
       {/if}

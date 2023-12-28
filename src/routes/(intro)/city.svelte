@@ -84,7 +84,7 @@
           $city.region = undefined
           region = null
         }}
-        focus={$city.continent == continent}>{continent}</Button
+        focus={$city.continent === continent}>{continent}</Button
       >
     {/each}
 
