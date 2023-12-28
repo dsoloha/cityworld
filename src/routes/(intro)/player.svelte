@@ -1,5 +1,4 @@
 <script lang="ts">
-  type SelectItem = { index: number; value: string; label: string } | null
   import Button from '$components/Button.svelte'
   import Card from '$components/Card.svelte'
   import Input from '$components/Input.svelte'
@@ -8,6 +7,7 @@
   import player from '$stores/player.store'
   import see from '$stores/see.store'
   import { capitalize } from '$util/string'
+  import type { SelectItem } from '$util/types'
 
   const occupations = [
     ['agriculture', 'You once owned and operated a large farm.'],
@@ -24,19 +24,19 @@
   ]
   const units = { weight: ['kg', 'lbs'], height: ['cm', 'in'] }
 
-  let heightUnit: SelectItem = { index: 0, value: 'cm', label: 'cm' }
-  let weightUnit: SelectItem = { index: 0, value: 'kg', label: 'kg' }
+  let heightUnit: SelectItem<string> = { index: 0, value: 'cm', label: 'cm' }
+  let weightUnit: SelectItem<string> = { index: 0, value: 'kg', label: 'kg' }
 
   $: first = $player.name.first
-  $: name = $player.full
+  $: fullName = $player.full
   $: occupation = occupations.find((occupation) => occupation[0] == $player.occupation) ?? ''
 </script>
 
 <Card>
   <p>
     The people living there now aren't going to accept just anyone as a leader. <b
-      >Who are you, and why should you take charge?</b
-    >
+  >Who are you, and why should you take charge?</b
+  >
   </p>
   <Input name="player-name-first" placeholder="first name" bind:value={$player.name.first} />
 
@@ -46,7 +46,7 @@
     {/if}
     <Input name="player-name-last" placeholder="last name" bind:value={$player.name.last} />
     <p class="player-response">
-      Your name is <b>{name}</b>.
+      Your name is <b>{fullName}</b>.
     </p>
 
     <p class="margin-top"><b>And what did you do, {first}?</b></p>
@@ -56,7 +56,7 @@
           handler={() => {
             $player.occupation = occupation[0]
           }}
-          focus={$player.occupation == occupation[0]}
+          focus={$player.occupation === occupation[0]}
           tooltip={occupation[1]}>{capitalize(occupation[0])}</Button
         >
       {/each}
@@ -75,13 +75,15 @@
           handler={() => {
             $player.sex = 'male'
           }}
-          focus={$player.sex == 'male'}>Male</Button
+          focus={$player.sex === 'male'}>Male
+        </Button
         >
         <Button
           handler={() => {
             $player.sex = 'female'
           }}
-          focus={$player.sex == 'female'}>Female</Button
+          focus={$player.sex === 'female'}>Female
+        </Button
         >
       </div>
 
@@ -129,7 +131,7 @@
 
   {#if $player.name.first}
     <p class="margin-top player-response">
-      You are <b>{name}</b>.
+      You are <b>{fullName}</b>.
       {#if $player.occupation}
         <b>{occupation[1]}</b>
       {/if}
@@ -154,7 +156,8 @@
           $see.setup.intro = false
           $see.setup.player = false
           $see.ui = false
-        }}>Continue</Button
+        }}>Continue
+      </Button
       >
     </div>
   {/if}
