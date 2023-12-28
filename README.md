@@ -16,4 +16,4 @@ cityworld is currently in pre-alpha, and not currently accepting contributions.
 
 If you've found a bug or some other issue, please open a new issue with as much detail as possible. Thank you!
 
-<sup>*</sup> name subject to change if I think of a better one.
+<sup>*</sup> name subject to change if I think of a better one
