@@ -14,7 +14,7 @@
       $see.setup.intro = true
       $see.setup.login = false
       $see.setup.player = false
-    }}>← Back
-  </Button
-  >
+    }}
+    >← Back
+  </Button>
 </Card>
