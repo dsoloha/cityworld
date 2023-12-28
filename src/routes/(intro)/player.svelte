@@ -46,7 +46,7 @@
     {/if}
     <Input name="player-name-last" placeholder="last name" bind:value={$player.name.last} />
     <p class="player-response">
-      Your name is <b>{name}</b>.
+      Your name is <b>{fullName}</b>.
     </p>
 
     <p class="margin-top"><b>And what did you do, {first}?</b></p>

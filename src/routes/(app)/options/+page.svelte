@@ -6,7 +6,7 @@
 </script>
 
 <Card>
-  <h1>settings</h1>
+  <h1>options</h1>
   <Link
     to="/"
     handler={() => {
