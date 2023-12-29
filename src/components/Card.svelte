@@ -10,6 +10,7 @@
     color: var(--light-text);
     margin-top: 2em;
     padding: 4em;
+    min-height: calc(var(--standard-unit) * 3);
   }
 
   @media (prefers-color-scheme: dark) {
