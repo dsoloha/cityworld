@@ -27,8 +27,8 @@
       <li aria-current={path === '/' ? 'page' : undefined}>
         <a href="/">home</a>
       </li>
-      <li aria-current={path.startsWith('/options') ? 'page' : undefined}>
-        <a href="/options">options</a>
+      <li aria-current={path.startsWith('/settings') ? 'page' : undefined}>
+        <a href="/settings">settings</a>
       </li>
       <li aria-current={path.startsWith('/profile') ? 'page' : undefined}>
         <a href="/profile">profile</a>
