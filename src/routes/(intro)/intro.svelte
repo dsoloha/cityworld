@@ -2,6 +2,7 @@
   import Button from '$components/Button.svelte'
   import Card from '$components/Card.svelte'
 
+  import city from '$stores/city.store'
   import see from '$stores/see.store'
 </script>
 
@@ -32,17 +33,17 @@
       $see.setup.player = true
       $see.setup.intro = false
     }}
-    >Let's do it.
+  >Let's do it.
   </Button>
   <Button
     handler={() => {
       $see.setup.login = true
       $see.setup.intro = false
     }}
-    >I already have a settlement.
+  >I already have a settlement.
   </Button>
-  <!-- <Button
-      handler={() => {
+  <Button
+    handler={() => {
         $city.name = 'test'
         $city.continent = 'Africa'
         $city.region = 'Australasia'
@@ -51,6 +52,7 @@
         $see.setup.intro = false
         $see.setup.player = false
         $see.ui = true
-      }}>Debug</Button
-    > -->
+      }}>Debug
+  </Button
+  >
 </Card>

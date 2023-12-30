@@ -155,7 +155,7 @@
           $see.setup.player = false
           $see.ui = true
         }}
-        >Continue
+      >Continue
       </Button>
     </div>
   {/if}
